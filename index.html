@@ -1,177 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudyMate - Your Smart Study Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate - Learn Smart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background: #f0f2f5;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
       color: #333;
     }
+
     header {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 4rem 2rem 3rem;
-      position: relative;
-      overflow: hidden;
     }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
-      animation: pulse 10s infinite linear;
-      z-index: 0;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.6; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+
     header h1 {
-      font-size: 4rem;
-      position: relative;
-      z-index: 1;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
-    header p.tagline {
-      font-size: 1.4rem;
-      margin-top: 1rem;
-      position: relative;
-      z-index: 1;
+
+    header p {
+      font-size: 1.1rem;
     }
-    header .award {
-      background: #fff;
-      color: #4e54c8;
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.2rem;
-      border-radius: 10px;
-      display: inline-block;
-      font-weight: bold;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-    .hero {
-      padding: 4rem 2rem;
+
+    .hero-section {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
       text-align: center;
-      background: #ffffff;
+      padding: 4rem 2rem;
     }
-    .hero h2 {
+
+    .hero-title {
       font-size: 2.5rem;
-      color: #4e54c8;
+      font-weight: 700;
       margin-bottom: 1rem;
     }
-    .hero p {
+
+    .hero-subtitle {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
     }
+
+    .cta-container {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
     .download-btn {
-      background: #ff4d4f;
+      background: #ff4b4b;
       color: white;
-      padding: 1rem 2.5rem;
-      font-size: 1.4rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
       text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 8px 20px rgba(255,77,79,0.3);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+      max-width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     .download-btn:hover {
-      background: #e04344;
+      background: #e03e3e;
     }
+
     .features {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #4e54c8;
+    }
+
+    .feature-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      padding: 4rem 2rem;
-      background: #f9fbff;
+      max-width: 1000px;
+      margin: auto;
     }
-    .feature {
-      background: white;
-      padding: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .feature-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease;
     }
-    .feature:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+
+    .feature-card:hover {
+      transform: translateY(-5px);
     }
-    .feature h3 {
+
+    .feature-card h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .award {
+      background: #f5f5f5;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .award h2 {
       color: #4e54c8;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
+
+    .award p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     footer {
-      background: #1e1e2f;
-      color: white;
       text-align: center;
-      padding: 2rem 1rem;
-    }
-    .highlight {
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      color: white;
       padding: 2rem;
-      text-align: center;
-      font-size: 1.3rem;
+      background: #4e54c8;
+      color: white;
+      font-size: 0.9rem;
     }
-    .highlight strong {
-      font-size: 1.5rem;
-      display: block;
-      margin-top: 0.5rem;
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .download-btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>StudyMate</h1>
-    <p class="tagline">Your Ultimate Study Companion</p>
-    <div class="award">🏆 Awarded for Innovation - Ganit Vigyan Mela, Narkatiyaganj</div>
+    <p>Your ultimate study companion</p>
   </header>
 
-  <section class="hero">
-    <h2>Revolutionize Your Study Routine</h2>
-    <p>Smart MCQ generation, AI tutoring, knowledge boosts & more — all in one powerful app!</p>
-    <a href="StudyMate.apk" class="download-btn">📥 Download StudyMate Now</a>
+  <section class="hero-section">
+    <h2 class="hero-title">Boost Your Learning Routine</h2>
+    <p class="hero-subtitle">
+      Smart MCQ generation, AI tutoring, knowledge boosts & more — all in one powerful app!
+    </p>
+    <div class="cta-container">
+      <a href="YOUR_APK_LINK_HERE.apk" class="download-btn">📥 Download StudyMate Now</a>
+    </div>
   </section>
 
   <section class="features">
-    <div class="feature">
-      <h3>📸 MCQ Generator</h3>
-      <p>Just snap a photo of your textbook or notes, and instantly get smart MCQs with options.</p>
-    </div>
-    <div class="feature">
-      <h3>🤖 AI Bot</h3>
-      <p>Got a doubt? Ask our AI bot and get instant help, summaries, explanations, and more.</p>
-    </div>
-    <div class="feature">
-      <h3>🌐 MCQs World</h3>
-      <p>Access & solve MCQs created by others. Share your own. Learn collaboratively.</p>
-    </div>
-    <div class="feature">
-      <h3>🚀 Knowledge Booster</h3>
-      <p>Daily fun facts & science-backed insights to ignite curiosity and boost retention.</p>
+    <h2>Features That Make a Difference</h2>
+    <div class="feature-list">
+      <div class="feature-card">
+        <h3>📸 MCQ Generator</h3>
+        <p>Snap your textbook or notes to generate intelligent MCQs instantly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🤖 AI Tutor</h3>
+        <p>Get your doubts solved by our friendly AI tutor anytime, anywhere.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🌍 MCQs World</h3>
+        <p>Access MCQs generated by other learners and test your knowledge.</p>
+      </div>
+      <div class="feature-card">
+        <h3>⚡ Knowledge Booster</h3>
+        <p>Daily interesting facts and info to keep your brain sharp!</p>
+      </div>
     </div>
   </section>
 
-  <div class="highlight">
-    Already winning hearts! <strong>StudyMate won an innovation award at its early stage.</strong> Join the revolution today.
-  </div>
+  <section class="award">
+    <h2>🏆 Recognized for Innovation</h2>
+    <p>
+      StudyMate proudly won a prize for its innovative concept at the <strong>Prantiya Ganit Vigyan Mela</strong>, organized by <strong>Lok Siksha Samiti, Bihar</strong> at <strong>Narkatiyaganj</strong>, even during its early development stage.
+    </p>
+  </section>
 
   <footer>
-    <p>Made with ❤️ by Yash . All rights reserved © 2025</p>
+    © 2025 StudyMate | Made with ❤️ by Yash .
   </footer>
+
 </body>
 </html>
