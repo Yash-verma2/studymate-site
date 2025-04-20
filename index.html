@@ -4,109 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StudyMate - Your Smart Study Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      background: #f9f9f9;
+      background: #f0f2f5;
       color: #333;
     }
     header {
-      background: #4f46e5;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
     }
-    header img {
-      height: 100px;
-      margin-bottom: 20px;
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+      animation: pulse 10s infinite linear;
+      z-index: 0;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 1; }
     }
     header h1 {
+      font-size: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    header p.tagline {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    header .award {
+      background: #fff;
+      color: #4e54c8;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #ffffff;
+    }
+    .hero h2 {
       font-size: 2.5rem;
+      color: #4e54c8;
+      margin-bottom: 1rem;
     }
-    header p {
+    .hero p {
       font-size: 1.2rem;
-      margin: 10px 0 20px;
+      margin-bottom: 2rem;
     }
-    .btn-download {
-      background: white;
-      color: #4f46e5;
-      padding: 12px 24px;
-      font-weight: 600;
+    .download-btn {
+      background: #ff4d4f;
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.4rem;
+      border: none;
       border-radius: 8px;
+      cursor: pointer;
       text-decoration: none;
       transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(255,77,79,0.3);
     }
-    .btn-download:hover {
-      background: #e0e0ff;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 960px;
-      margin: auto;
+    .download-btn:hover {
+      background: #e04344;
     }
     .features {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: #f9fbff;
     }
     .feature {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+    }
+    .feature h3 {
+      color: #4e54c8;
+      margin-bottom: 0.8rem;
     }
     footer {
+      background: #1e1e2f;
+      color: white;
       text-align: center;
-      padding: 30px;
-      background: #eee;
-      color: #555;
-      font-size: 0.9rem;
+      padding: 2rem 1rem;
     }
-    @media (max-width: 768px) {
-      .features {
-        grid-template-columns: 1fr;
-      }
+    .highlight {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+    .highlight strong {
+      font-size: 1.5rem;
+      display: block;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="ic_launcher.png" alt="StudyMate Logo" /> <!-- Replace with your logo -->
     <h1>StudyMate</h1>
-    <p>Your Smart Study Assistant</p>
-    <a href="StudyMate.apk" class="btn-download" download>📥 Download APK</a>
+    <p class="tagline">Your Ultimate Study Companion</p>
+    <div class="award">🏆 Awarded for Innovation - Ganit Vigyan Mela, Narkatiyaganj</div>
   </header>
 
-  <section>
-    <h2 style="text-align: center; margin-bottom: 40px;">Why StudyMate?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>📚 Auto MCQ Generator</h3>
-        <p>Generate high-quality multiple choice questions from any text or image.</p>
-      </div>
-      <div class="feature">
-        <h3>🧠 Mind Map Creation</h3>
-        <p>Visualize key concepts with AI-generated mind maps.</p>
-      </div>
-      <div class="feature">
-        <h3>🎤 Chatbot Help</h3>
-        <p>Get instant answers to your study queries using the AI chatbot.</p>
-      </div>
-      <div class="feature">
-        <h3>📷 Image-to-Text</h3>
-        <p>Extract text from textbooks or notes easily with your camera.</p>
-      </div>
+  <section class="hero">
+    <h2>Revolutionize Your Study Routine</h2>
+    <p>Smart MCQ generation, AI tutoring, knowledge boosts & more — all in one powerful app!</p>
+    <a href="StudyMate.apk" class="download-btn">📥 Download StudyMate Now</a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>📸 MCQ Generator</h3>
+      <p>Just snap a photo of your textbook or notes, and instantly get smart MCQs with options.</p>
+    </div>
+    <div class="feature">
+      <h3>🤖 AI Bot</h3>
+      <p>Got a doubt? Ask our AI bot and get instant help, summaries, explanations, and more.</p>
+    </div>
+    <div class="feature">
+      <h3>🌐 MCQs World</h3>
+      <p>Access & solve MCQs created by others. Share your own. Learn collaboratively.</p>
+    </div>
+    <div class="feature">
+      <h3>🚀 Knowledge Booster</h3>
+      <p>Daily fun facts & science-backed insights to ignite curiosity and boost retention.</p>
     </div>
   </section>
 
+  <div class="highlight">
+    Already winning hearts! <strong>StudyMate won an innovation award at its early stage.</strong> Join the revolution today.
+  </div>
+
   <footer>
-    &copy; 2025 StudyMate. Built with ❤️ for students everywhere.
+    <p>Made with ❤️ by Yash . All rights reserved © 2025</p>
   </footer>
 </body>
 </html>
