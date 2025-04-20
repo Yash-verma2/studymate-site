@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyMate - Your Smart Study Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+    .btn-download {
+      background: white;
+      color: #4f46e5;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-download:hover {
+      background: #e0e0ff;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .feature {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #eee;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ic_launcher.png" alt="StudyMate Logo" /> <!-- Replace with your logo -->
+    <h1>StudyMate</h1>
+    <p>Your Smart Study Assistant</p>
+    <a href="StudyMate.apk" class="btn-download" download>📥 Download APK</a>
+  </header>
+
+  <section>
+    <h2 style="text-align: center; margin-bottom: 40px;">Why StudyMate?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>📚 Auto MCQ Generator</h3>
+        <p>Generate high-quality multiple choice questions from any text or image.</p>
+      </div>
+      <div class="feature">
+        <h3>🧠 Mind Map Creation</h3>
+        <p>Visualize key concepts with AI-generated mind maps.</p>
+      </div>
+      <div class="feature">
+        <h3>🎤 Chatbot Help</h3>
+        <p>Get instant answers to your study queries using the AI chatbot.</p>
+      </div>
+      <div class="feature">
+        <h3>📷 Image-to-Text</h3>
+        <p>Extract text from textbooks or notes easily with your camera.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 StudyMate. Built with ❤️ for students everywhere.
+  </footer>
+</body>
+</html>
